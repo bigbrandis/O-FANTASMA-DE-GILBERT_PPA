@@ -156,6 +156,8 @@ port_bas = os.path.join(aula, 'novo\PORTAS_BASICO.png')
 port_int = os.path.join(aula, 'novo\PORTAS_INTERMEDIARIO.png')
 port_ava = os.path.join(aula, 'novo\PORTAS_AVANCADO.png')
 
+chave_ava = os.path.join(aula, 'INTERMEDIARIO\CHAVE_INTER.png')
+
 
 som_ativo = 1
 tela_ativa = 1
@@ -926,10 +928,10 @@ while True:
                 if mouse_x > x024 and mouse_y > y024 and mouse_x < x124 and mouse_y < y124:
                     fundo = pygame.image.load(tela_jogar)
                     tela_ativa = 4
-            
+
 ####################################################################################################
 #intermediario
-            
+
 #pergunta avançado 1
             elif tela_ativa == 649:
                 if mouse_x > x020 and mouse_y > y020 and mouse_x < x120 and mouse_y < y120:
@@ -965,7 +967,7 @@ while True:
                 if mouse_x > x020 and mouse_y > y020 and mouse_x < x120 and mouse_y < y120:
                     fundo = pygame.image.load(prox_interm)
                     tela_ativa = 652
-                    
+
 #pergunta avançado 2
             elif tela_ativa == 652:
                 if mouse_x > x020 and mouse_y > y020 and mouse_x < x120 and mouse_y < y120:
@@ -1286,11 +1288,17 @@ while True:
                     tela_ativa = 678
 
 #tela recomeçar ou avançar avançado
+
             elif tela_ativa == 678:
-                fundo = pygame.image.load(recomecar_avancar_intermd)
-                tela_ativa = 679
+                if mouse_x > x088 and mouse_y > y088 and mouse_x < x188 and mouse_y < y188:
+                    fundo = pygame.image.load(chave_ava)
+                    tela_ativa = 679
 
             elif tela_ativa == 679:
+                fundo = pygame.image.load(recomecar_avancar_intermd)
+                tela_ativa = 680
+
+            elif tela_ativa == 680:
                 if mouse_x > x025 and mouse_y > y025 and mouse_x < x125 and mouse_y < y125:
                     fundo = pygame.image.load(port_int)
                     tela_ativa = 4
@@ -1298,19 +1306,7 @@ while True:
                 if mouse_x > x024 and mouse_y > y024 and mouse_x < x124 and mouse_y < y124:
                     fundo = pygame.image.load(tela_jogar)
                     tela_ativa = 4
-                
-                
 
-# tela fim do jogo avançado
-            elif tela_ativa == 680:
-                if mouse_x > x088 and mouse_y > y088 and mouse_x < x188 and mouse_y < y188:
-                    fundo = pygame.image.load(fim_ava)
-                    tela_ativa =681
-
-            elif tela_ativa == 681:
-                if mouse_x > x088 and mouse_y > y088 and mouse_x < x188 and mouse_y < y188:
-                    fundo = pygame.image.load(tela_inicial)
-                    tela_ativa = 1
 ####################################################################################################
 #avançado
 
@@ -1349,7 +1345,7 @@ while True:
                 if mouse_x > x020 and mouse_y > y020 and mouse_x < x120 and mouse_y < y120:
                     fundo = pygame.image.load(prox_ava)
                     tela_ativa = 852
-                    
+
 #pergunta avançado 2
             elif tela_ativa == 852:
                 if mouse_x > x020 and mouse_y > y020 and mouse_x < x120 and mouse_y < y120:
@@ -1682,8 +1678,8 @@ while True:
                 if mouse_x > x024 and mouse_y > y024 and mouse_x < x124 and mouse_y < y124:
                     fundo = pygame.image.load(premio_nobel_ava)
                     tela_ativa = 880
-                
-                
+
+
 
 # tela fim do jogo avançado
             elif tela_ativa == 880:
@@ -1695,8 +1691,8 @@ while True:
                 if mouse_x > x088 and mouse_y > y088 and mouse_x < x188 and mouse_y < y188:
                     fundo = pygame.image.load(tela_inicial)
                     tela_ativa = 1
-                    
-                  
+
+
 
 
     pygame.display.flip()
